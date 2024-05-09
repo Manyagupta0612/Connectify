@@ -25,7 +25,10 @@ const SECRET_KEY = generateSecretKey();
 console.log('Generated Secret Key:', SECRET_KEY);
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/Connectify');
+const uri = "mongodb+srv://ManyaGupta:hLv3xTCUtkoblfIA@manya.iutcfdn.mongodb.net/";
+mongoose.connect(uri).then(()=>{
+    console.log("success");
+})
 const db = mongoose.connection;
 db.once('open',()=>{
     console.log('DB Connected...');
